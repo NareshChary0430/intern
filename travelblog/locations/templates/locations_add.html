@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Add Locations{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Add a New Location</h1>
+    <form class="col-md-6 mx-auto card p-4 shadow-lg border-0" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="location_name" class="form-label">Location Name</label>
+            <input name="location_name" type="text" id="location_name" class="form-control" placeholder="Enter location name" required>
+        </div>
+        <div class="mb-4">
+            <label for="location_description" class="form-label">Location Description</label>
+            <textarea name="location_description" id="location_description" class="form-control" rows="4" placeholder="Enter description" required></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="location_image" class="form-label">Location Image</label>
+            <input name="location_image" type="file" id="location_image" class="form-control">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
